@@ -23,9 +23,10 @@ class Program
             Console.WriteLine("\n=====  STUDENT SYSTEM =====");
             Console.WriteLine("1. Add Student");
             Console.WriteLine("2. View All Students");
-            Console.WriteLine("3.  Compute Average Grade");
-            Console.WriteLine("4.  Find Highest Grade");
+            Console.WriteLine("3. Compute Average Grade");
+            Console.WriteLine("4. Find Highest Grade");
             Console.WriteLine("5. Exit");
+            Console.WriteLine("\n===========================");
 
             Console.Write("Choose an Option: ");
             choice = Convert.ToInt32(Console.ReadLine());
@@ -68,7 +69,7 @@ class Program
             static void AddStudent()
         {
             Console.Write("Student Name: ");
-            string Name = Console.ReadLine();
+            string? Name = Console.ReadLine()?? "";
 
             Console.Write("Grade 1: ");
             double g1 = Convert.ToDouble(Console.ReadLine());
@@ -78,6 +79,7 @@ class Program
 
             Console.Write("Grade 3: ");
             double g3 = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("\n==========================");
 
             double average = (g1 + g2 + g3) / 3;
 
@@ -111,7 +113,7 @@ class Program
                 Console.WriteLine($"Grade 2: {grade2[i]}");
                 Console.WriteLine($"Grade 3: {grade3[i]}");
                 Console.WriteLine($"Average: {averages[i]:F2}");
-                Console.WriteLine();
+                Console.WriteLine("----------------------");
             }
         }
         //Compute Average Grade
@@ -132,6 +134,7 @@ class Program
 
             Console.WriteLine("\n===== CLASS AVERAGE =====");
             Console.WriteLine($"Overall Average Grade: {total / studentCount:F2}");
+            Console.WriteLine("\n==========================");
         }
 
         //Finding Highest Grade
@@ -158,6 +161,7 @@ class Program
             Console.WriteLine("\n===== HIGHEST GRADE =====");
             Console.WriteLine($"Top Student: {topStudent}");
             Console.WriteLine($"Highest Grade: {highest:F2}");
+            Console.WriteLine("\n==========================");
         }
     }
 }
